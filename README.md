@@ -41,8 +41,28 @@ Nous nous sommes largement inspiré de la source :
 En effet, après quelques recherches sur notre moteur de recherche favori, nous avons choisis d'appliquer un Modèle de Régression linéaire avec Python.
 Afin d'appliquer ce modèle, et donc d'avoir une estimation réaliste, nous avons du en amont:
 
-* Une préparation rigoureuse de notre jeu de données (nettoyage des divers features, split des fichiers "Code departement") 
+* Une préparation rigoureuse de notre jeu de données (nettoyage des divers features, split des fichiers "Code departement")
+Un exemple concret d'un des divers nettoayge de notre Dataframe : 
+
+    ```PYTHON
+    # Suppression ou mises à zéro des lignes vides
+        df.dropna(subset = ["Valeur fonciere"], inplace = True)
+        df.dropna(subset = ["Code postal"], inplace = True)
+        df.dropna(subset = ["Surface reelle bati"], inplace = True)
+        df.dropna(subset = ["Code departement"], inplace = True)
+        df['Surface terrain'] = df['Surface terrain'].fillna(0)
+    ```
+
 * La création de l'isolation Forest
+
+    ```PYTHON
+    model=IsolationForest(n_estimators=50, max_samples='auto', contamination=float(0.1),max_features=1.0)
+    model.fit(df[['Valeur fonciere','Surface','Nombre pieces principales']])
+    
+    df['scores']=model.decision_function(df[['Valeur fonciere','Surface','Nombre pieces principales']])
+    df['anomaly']=model.predict(df[['Valeur fonciere','Surface','Nombre pieces principales']])
+    ```
+
 * Creation matrice correlation
     
     ```PYTHON
@@ -56,6 +76,8 @@ Afin d'appliquer ce modèle, et donc d'avoir une estimation réaliste, nous avon
 ![Screenshot](Capture.PNG)
 
 * Entrainement de notre modèle via Régression Linéaire
+
+
 
 Puis, nous sommes arrivés à un résutlat qui englobe ces divers élémeents : 
 --------------------------------------
