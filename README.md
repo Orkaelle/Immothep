@@ -112,16 +112,11 @@ Enfin, grâce à la librairie "FASTAPI", nous sommes parvenu à offrir une véri
 En saisissant l'adresse http://127.0.0.1:8000/ l'utilisateur peux directement se conncecter à notre API.
 
     ```PYTHON
-    from typing import Optional
-    from fastapi import FastAPI
-    import immothep_OH as oh
-
     app = FastAPI()
 
     @app.get("/")
     def read_root():
         return {"welcome_message": "Bienvenue sur Immothep !"}
-
 
     @app.get("/estimation/{cp}/{surface}/{terrain}/{nbpieces}/")
     def api_estimate(cp: int, surface: int, terrain: int, nbpieces: int):
