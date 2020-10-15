@@ -32,6 +32,8 @@ La société vous sollicite donc pour réaliser la partie API en utilisant les d
 * import seaborn as sns
 * import matplotlib.pyplot as plt
 * from sklearn.ensemble import IsolationForest
+* from typing import Optional
+* from fastapi import FastAPI
 
 ## Notre vision du projet : 
 
@@ -108,6 +110,25 @@ le score R2 est ()
 
 Enfin, grâce à la librairie "FASTAPI", nous sommes parvenu à offrir une véritable experience ludique à l'utilisateur! :-D
 En saisissant l'adresse http://127.0.0.1:8000/ l'utilisateur peux directement se conncecter à notre API.
+
+    ```PYTHON
+    from typing import Optional
+    from fastapi import FastAPI
+    import immothep_OH as oh
+
+    app = FastAPI()
+
+    @app.get("/")
+    def read_root():
+        return {"welcome_message": "Bienvenue sur Immothep !"}
+
+
+    @app.get("/estimation/{cp}/{surface}/{terrain}/{nbpieces}/")
+    def api_estimate(cp: int, surface: int, terrain: int, nbpieces: int):
+        estimation = oh.estimation(cp, surface, terrain, nbpieces)
+        return {'estimation': estimation}
+    ```
+
 Exemple : 
 http://127.0.0.1:8000/estimation/75017/115/50/5/ :
                                                     ---> estimation : "Notre chemin d'accès
