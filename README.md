@@ -114,15 +114,16 @@ En saisissant l'adresse http://127.0.0.1:8000/ l'utilisateur peux directement se
     ```PYTHON
     app = FastAPI()
 
+
     @app.get("/")
     def read_root():
-        return {"welcome_message": "Bienvenue sur Immothep !"}
+        return {"Hello": "World"}
 
-    @app.get("/estimation/{cp}/{surface}/{terrain}/{nbpieces}/")
-    def api_estimate(cp: int, surface: int, terrain: int, nbpieces: int):
-        estimation = oh.estimation(cp, surface, terrain, nbpieces)
-        return {'estimation': estimation}
-    ```
+
+    @app.get("/items/{item_id}")
+    def read_item(item_id: int, q: Optional[str] = None):
+        return {"item_id": item_id, "q": q}
+        ```
 
 Exemple : 
 http://127.0.0.1:8000/estimation/75017/115/50/5/ :
