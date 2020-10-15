@@ -115,8 +115,8 @@ le score R2 est ()
 
 ## Visualisation via FASTAPI :
 
-Enfin, grâce à la librairie "FASTAPI", nous sommes parvenu à offrir une véritable experience ludique à l'utilisateur! :-D
-En saisissant l'adresse http://127.0.0.1:8000/ l'utilisateur peux directement se conncecter à notre API.
+Enfin, grâce à la librairie "FASTAPI", nous sommes parvenu à offrir une véritable experience ludique à l'utilisateur! :-D  
+En saisissant l'adresse http://127.0.0.1:8000/ l'utilisateur peux directement se conncecter à notre API.  
 
 Pour lancer le serveur API, il faut ouvrir le fichier main.py puis saisir dans le terminal la commande suivante :
 ```
