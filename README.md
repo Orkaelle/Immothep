@@ -113,15 +113,17 @@ En saisissant l'adresse http://127.0.0.1:8000/ l'utilisateur peux directement se
 
 Exemple d'utilisation : 
 
-    ```PYTHON
-    app = FastAPI()
-    @app.get("/")
-    def read_root():
-        return {"Hello": "World"}
-    @app.get("/items/{item_id}")
-    def read_item(item_id: int, q: Optional[str] = None):
-        return {"item_id": item_id, "q": q}
-    ```
+        app = FastAPI()
+
+
+        @app.get("/")
+        def read_root():
+            return {"Hello": "World"}
+
+
+        @app.get("/items/{item_id}")
+        def read_item(item_id: int, q: Optional[str] = None):
+            return {"item_id": item_id, "q": q}
 
 Exemple : 
 http://127.0.0.1:8000/estimation/75017/115/50/5/ :
