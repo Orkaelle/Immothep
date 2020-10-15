@@ -75,9 +75,29 @@ Un exemple concret d'un des divers nettoayge de notre Dataframe :
 
 ![Screenshot](Capture.PNG)
 
+Un ".plot" permet de mieux visualiser nos divers correaltions :
+
+![Screenshot](Capture2.PNG)
+
+
 * Entrainement de notre modèle via Régression Linéaire
 
-
+    ```PYTHON
+    df_train = df.sample(n=400, random_state=5)
+    X = pd.DataFrame(np.c_[df_train["Surface"],df_train["Nombre pieces principales"]], columns= ["Surface","Nombre pieces principales"])
+    Y = df_train["Valeur fonciere"]
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state=5)
+    lmodellineaire = LinearRegression()
+    lmodellineaire.fit(X_train, Y_train)
+    ```
+    
+* Visualisation de nos résultats : 
+    
+    ```PYTHON
+    y_train_predict = lmodellineaire.predict(X_train)
+    rmse = round(np.sqrt(mean_squared_error(Y_train, y_train_predict)),2)
+    r2 = round(r2_score(Y_train, y_train_predict),4)
+    ```
 
 Puis, nous sommes arrivés à un résutlat qui englobe ces divers élémeents : 
 --------------------------------------
