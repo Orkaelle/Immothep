@@ -126,7 +126,7 @@ Exemple d'utilisation :
             return {"item_id": item_id, "q": q}
 
 Exemple : 
-http://127.0.0.1:8000/estimation/75017/115/50/5/ :
+http://127.0.0.1:8000/estimation/75017/115/50/5/ :  
                                                     ---> estimation : "Notre chemin d'accès
                                                     ---> 75017 : code département (ici arondissement de Paris)
                                                     ---> 115 : Nombre de m²
