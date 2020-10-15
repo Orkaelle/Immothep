@@ -53,11 +53,7 @@ Afin d'appliquer ce modèle, et donc d'avoir une estimation réaliste, nous avon
     
 * L'étude de la correlation
 
-
-
-
-
-
+![Screenshot](Capture.png)
 
 * Entrainement de notre modèle via Régression Linéaire
 
