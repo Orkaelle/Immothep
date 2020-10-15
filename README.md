@@ -1,7 +1,7 @@
 # Immothep
 Immoteph - Groupe 1 - Orkaëlle & Thomas
 
-![Screenshot](0eface24-8936-437e-89df-1eacf1e8fdbe.png)
+![Screenshot](https://github.com/Orkaelle/Immothep/blob/main/IMG/0eface24-8936-437e-89df-1eacf1e8fdbe.png)
 
 ## Contexte du projet : 
 
