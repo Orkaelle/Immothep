@@ -82,11 +82,11 @@ Un exemple concret d'un des divers nettoayge de notre Dataframe :
     
 * L'étude de la correlation
 
-![Screenshot](Capture.PNG)
+![Screenshot](https://github.com/Orkaelle/Immothep/blob/main/IMG/Capture.PNG)
 
 Un ".plot" permet de mieux visualiser nos divers correlations :
 
-![Screenshot](Capture2.PNG)
+![Screenshot](https://github.com/Orkaelle/Immothep/blob/main/IMG/Capture2.PNG)
 
 
 * Entrainement de notre modèle via Régression Linéaire
@@ -154,6 +154,6 @@ Les demandes suivantes seront plus rapides.
 Merci d'avoir pris le temps de lire ce README!   
 N'hésitez pas à essayer vous même de choisir des valeurs, afin de determiner l'estimation du bien de vos rêves! 
 
-![Screenshot](f_3.jpg)
+![Screenshot](https://github.com/Orkaelle/Immothep/blob/main/IMG/f_3.jpg)
 
 
