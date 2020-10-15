@@ -47,7 +47,7 @@ La société vous sollicite donc pour réaliser la partie API en utilisant les d
 Nous nous sommes largement inspiré de la source : 
 * https://ledatascientist.com/creer-un-modele-de-regression-lineaire-avec-python/
 
-En effet, après quelques recherches sur notre moteur de recherche favori, nous avons choisis d'appliquer un Modèle de Régression linéaire avec Python.
+En effet, après quelques recherches sur notre moteur de recherche favori, nous avons choisis d'appliquer un Modèle de Régression linéaire avec Python.  
 Afin d'appliquer ce modèle, et donc d'avoir une estimation réaliste, nous avons du en amont:
 
 * Une préparation rigoureuse de notre jeu de données (nettoyage des divers features, split des fichiers "Code departement")
