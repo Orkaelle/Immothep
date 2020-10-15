@@ -127,11 +127,11 @@ Exemple d'utilisation :
 
 Exemple : 
 http://127.0.0.1:8000/estimation/75017/115/50/5/ :  
-                                                    ---> estimation : "Notre chemin d'accès
-                                                    ---> 75017 : code département (ici arondissement de Paris)
-                                                    ---> 115 : Nombre de m²
-                                                    ---> 50 : Surface terrain
-                                                    ---> 5 : Nombre de pièce
+                                                      ---> estimation : "Notre chemin d'accès  
+                                                      ---> 75017 : code département (ici arondissement de Paris)  
+                                                      ---> 115 : Nombre de m²  
+                                                      ---> 50 : Surface terrain  
+                                                      ---> 5 : Nombre de pièce  
 
 ## A vous de jouer ! :-)
 
