@@ -41,11 +41,46 @@ Nous nous sommes largement inspiré de la source :
 En effet, après quelques recherches sur notre moteur de recherche favori, nous avons choisis d'appliquer un Modèle de Régression linéaire avec Python.
 Afin d'appliquer ce modèle, et donc d'avoir une estimation réaliste, nous avons du en amont:
 
-* Une préparation rigoureuse de notre jeu de données
-* La création du modèle
-* L'évaluation du modèle de régression linéaire
+* Une préparation rigoureuse de notre jeu de données (nettoyage des divers features, split des fichiers "Code departement") 
+* La création de l'isolation Forest
+* Creation matrice correlation
+    
+    ```PYTHON
+    df_matrice = df[["Valeur fonciere",'Prix moyen m2 CP',"Nombre pieces principales","Surface","Surface terrain"]]
+    matrice_corr = df_matrice.corr().round(3)
+    sns.heatmap(data=matrice_corr, annot=True)
+    ```
+    
+* L'étude de la correlation
+
+
+
+
+
+
+
+* Entrainement de notre modèle via Régression Linéaire
 
 Puis, nous sommes arrivés à un résutlat qui englobe ces divers élémeents : 
 --------------------------------------
 L'erreur quadratique moyenne est ()
 le score R2 est ()
+
+## Visualisation via FASTAPI :
+
+Enfin, grâce à la librairie "FASTAPI", nous sommes parvenu à offrir une véritable experience ludique à l'utilisateur! :-D
+En saisissant l'adresse http://127.0.0.1:8000/ l'utilisateur peux directement se conncecter à notre API.
+Exemple : 
+http://127.0.0.1:8000/estimation/75017/115/50/5/ :
+                                                    ---> estimation : "Notre chemin d'accès
+                                                    ---> 75017 : code département (ici arondissement de Paris)
+                                                    ---> 115 : Nombre de m²
+                                                    ---> 50 : Surface terrain
+                                                    ---> 5 : Nombre de pièce
+
+## A vous de jouer ! :-)
+
+Merci d'avoir pris le temps de lire ce README! 
+N'hésitez pas à essayer vous même de choisir des valeurs, afin de determiner l'estimation du bien de vos rêves! 
+
+
