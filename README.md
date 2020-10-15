@@ -10,6 +10,17 @@ Possédant déjà un site internet, elle souhaite pouvoir intégrer à celui-ci,
 Elle ne possède cependant pas les compétences nécessaires pour la réalisation de l'API qui va permettre d'exposer ce nouveau service.
 La société vous sollicite donc pour réaliser la partie API en utilisant les données Open Data des Demandes de Valeurs Foncières (DVF) sur l'année 2019.
 
+## Fichiers présents dans le GitHub
+
+### Fichiers principaux
+* Le fichier requierement.txt permet de créer l'environnement approprié à l'execution de notre programme.
+* Le fichier main.py permet de lancer l'API et ainsi l'ensemble de notre programme
+* Le fichier immothep_fct.py contient l'ensemble des fonctions python appelées via l'API
+
+### Fichiers annexes
+* Le fichier immothep_dev.ipynb permet de visualiser notre raisonnement et l'enchainement de nos différentes étapes de traitement
+* Le fichier immothep_prod.ipynb synthétise le programme en appelant les fonctions depuis le fichier py et en affichant uniquement les visualisations essentielles.
+
 ## Sources utilisées : 
 
 * https://ledatascientist.com/creer-un-modele-de-regression-lineaire-avec-python/
@@ -20,20 +31,16 @@ La société vous sollicite donc pour réaliser la partie API en utilisant les d
 
 ## Librairies importées : 
 
-* import requests
-* import os
-* from sklearn.model_selection import train_test_split
-* from sklearn.linear_model import LinearRegression
-* from sklearn.metrics import mean_squared_error
-* from sklearn.metrics import r2_score
-* import pandas as pd
-* import numpy as np
-* import seaborn as sns
-* import seaborn as sns
-* import matplotlib.pyplot as plt
-* from sklearn.ensemble import IsolationForest
-* from typing import Optional
-* from fastapi import FastAPI
+* requests
+* os
+* sklearn
+* csv
+* pandas
+* numpy
+* seaborn
+* matplotlib
+* typing
+* fastapi
 
 ## Notre vision du projet : 
 
@@ -77,7 +84,7 @@ Un exemple concret d'un des divers nettoayge de notre Dataframe :
 
 ![Screenshot](Capture.PNG)
 
-Un ".plot" permet de mieux visualiser nos divers correaltions :
+Un ".plot" permet de mieux visualiser nos divers correlations :
 
 ![Screenshot](Capture2.PNG)
 
@@ -101,7 +108,7 @@ Un ".plot" permet de mieux visualiser nos divers correaltions :
     r2 = round(r2_score(Y_train, y_train_predict),4)
     ```
 
-Puis, nous sommes arrivés à un résutlat qui englobe ces divers élémeents : 
+Puis, nous sommes arrivés à un résultat qui englobe ces divers élémeents : 
 --------------------------------------
 L'erreur quadratique moyenne est ()
 le score R2 est ()
@@ -110,6 +117,11 @@ le score R2 est ()
 
 Enfin, grâce à la librairie "FASTAPI", nous sommes parvenu à offrir une véritable experience ludique à l'utilisateur! :-D
 En saisissant l'adresse http://127.0.0.1:8000/ l'utilisateur peux directement se conncecter à notre API.
+
+Pour lancer le serveur API, il faut ouvrir le fichier main.py puis saisir dans le terminal la commande suivante :
+```
+uvicorn main:app --reload
+```
 
 Exemple d'utilisation : 
 
@@ -132,6 +144,10 @@ http://127.0.0.1:8000/estimation/75017/115/50/5/ :
                                                       ---> 115 : Nombre de m²  
                                                       ---> 50 : Surface terrain  
                                                       ---> 5 : Nombre de pièce  
+                                                      
+** Précision **
+La première demande d'estimation via l'API requiert le chargement global des données et peut nécessiter un peu de temps de traitement.  
+Les demandes suivantes seront plus rapides.
 
 ## A vous de jouer ! :-)
 
