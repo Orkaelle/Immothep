@@ -110,8 +110,8 @@ Un ".plot" permet de mieux visualiser nos divers correlations :
 
 Puis, nous sommes arrivés à un résultat qui englobe ces divers élémeents : 
 --------------------------------------
-L'erreur quadratique moyenne est ()
-le score R2 est ()
+L'erreur quadratique moyenne est ()  
+le score R2 est ()  
 
 ## Visualisation via FASTAPI :
 
